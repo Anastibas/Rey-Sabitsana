@@ -1,11 +1,25 @@
 # Rey-Sabitsana
 
-  // 1. [5, 1, 4, 6, 7, 3, 5, 7, 3]
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // 1. [5, 1, 4, 6, 7, 3, 5, 7, 3]
             //      On the array above print the duplicate elements.
             //      Please show us your code.
 
-            label1.Text = "";
-            label2.Text = "";
+            Console.Write("5, 1, 4, 6, 7, 3, 5, 7, 3");
+            Console.WriteLine();
+            Console.Write("List of Duplicate Element \n");
             int[] arr = new int[] { 5, 1, 4, 6, 7, 3, 5, 7, 3 };
             for (int i = 0; i < arr.Length; i++)
             {
@@ -13,11 +27,15 @@
                 {
                     if (arr[i] == arr[j])
                     {
-                        if (label1.Text == "") { label1.Text += arr[i].ToString(); } else { label1.Text += ","+arr[i].ToString(); }
+                        Console.Write(arr[i].ToString()+",");
                     }
+
                 }
+
             }
 
+            Console.WriteLine();
+            Console.WriteLine();
             //   2. Print 
             //        1
             //        2 2
@@ -26,19 +44,20 @@
             //        5 5 5 5 5
             //        6 6 6 6 6 6
 
-            int num,a,b,c;
-
+            int num, a, b, c;
+            Console.Write("Pyramid \n");
             num = 6;
             for (a = 1; a <= num; a++)
             {
-                for (b = 1; b <a; b++)
+                for (b = 1; b < a; b++)
                 {
-                    label2.Text += a.ToString()+" ";                 
+                   Console.Write( a.ToString() + " ");
                 }
-                label2.Text += a.ToString() + "\n";
+                Console.Write( a.ToString() + "\n");
             }
 
 
+            Console.WriteLine();
             ///  Pertage Between Male and Female
 
             //                    1. 3. Using your preferred IDE, create a program that asks the user for the number of 
@@ -57,24 +76,51 @@
             //                          Enter the number of resigned females: 17
 
             int TotalnewlHIred, TotalPermanent, TotalResigned;
+            int NewlyhiredMale = 36;
+            int NewlyhiredFemale = 17;
+
+            int Resignedmale = 36;
+            int ResignedFemale = 17;
+
+            int PermanentMale = 36;
+            int PermanentFemale = 17;
 
             ///  Total Count
-            TotalnewlHIred = Convert.ToInt16(new3.Text) + Convert.ToInt16(new2.Text);
-            TotalPermanent = Convert.ToInt16(per2.Text) + Convert.ToInt16(per3.Text);
-            TotalResigned = Convert.ToInt16(res2.Text) + Convert.ToInt16(res3.Text);
+            TotalnewlHIred = NewlyhiredMale + NewlyhiredFemale;
+            TotalPermanent = PermanentMale + PermanentFemale;
+            TotalResigned = Resignedmale + ResignedFemale;
 
-            new1.Text =TotalnewlHIred.ToString();
-            res1.Text = TotalResigned.ToString();
-            Per1.Text = TotalPermanent.ToString();
+             Console.Write("Total of NewlyHired " + TotalnewlHIred.ToString());
+            Console.WriteLine();
+            Console.Write("Total of Resigned " + TotalResigned.ToString());
+            Console.WriteLine();
+            Console.Write("Total of Permanent " + TotalPermanent.ToString());
 
+            Console.WriteLine(); Console.WriteLine();
+            Console.WriteLine(); Console.Write("####Newly Hired\n");
+
+            Console.Write("Female ");
             /// Newly Hired
-            newper1.Text = (Math.Round((double)(100 * Convert.ToInt16(new2.Text)) / TotalnewlHIred,2)).ToString()+"%";
-            newper2.Text = (Math.Round((double)(100 * Convert.ToInt16(new3.Text)) / TotalnewlHIred,2)).ToString()+"%";
-
+            Console.Write((Math.Round((double)(100 * NewlyhiredFemale) / TotalnewlHIred, 2)).ToString() + "%\n");
+            Console.Write("Male ");
+            Console.Write((Math.Round((double)(100 * NewlyhiredMale) / TotalnewlHIred, 2)).ToString() + "%\n");
+            Console.WriteLine();
+            Console.Write("#####Permanent\n");
+            Console.Write("Female ");
             /// Permanent
-            perper1.Text = (Math.Round((double)(100 * Convert.ToInt16(per2.Text)) / TotalPermanent, 2)).ToString()+"%";
-            perper2.Text = (Math.Round((double)(100 * Convert.ToInt16(per3.Text)) / TotalPermanent, 2)).ToString()+"%";
-
+            Console.Write( (Math.Round((double)(100 * PermanentFemale) / TotalPermanent, 2)).ToString() + "%\n");
+            Console.Write("Male ");
+            Console.Write((Math.Round((double)(100 * PermanentMale) / TotalPermanent, 2)).ToString() + "%\n");
+            Console.WriteLine();
+            Console.Write("#####Resigned\n");
+            Console.Write("Female ");
             /// resigned
-            resper1.Text = (Math.Round((double)(100 * Convert.ToInt16(res2.Text)) / TotalnewlHIred,2)).ToString()+"%";
-            resper2.Text = (Math.Round((double)(100 * Convert.ToInt16(res3.Text)) / TotalnewlHIred,2)).ToString()+"%";
+            Console.Write((Math.Round((double)(100 * ResignedFemale) / TotalnewlHIred, 2)).ToString() + "%\n");
+            Console.Write("Male ");
+            Console.Write((Math.Round((double)(100 * Resignedmale) / TotalnewlHIred, 2)).ToString() + "%\n");
+
+            Console.Read();
+        }
+    }
+}
+  
